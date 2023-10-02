@@ -2,24 +2,35 @@
   "name": "hello",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "email": "dedaldinodev4@gmail.com",
+    "name": "Dedaldino Daniel"
+  },
+  "main": "src/electron.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"yarn next:dev\" \"yarn electron:wait\"",
+    "next:dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "electron:dev": "electron .",
+    "electron:wait": "wait-on tcp:3000 && yarn electron:dev"
   },
   "dependencies": {
+    "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "concurrently": "^8.2.1",
+    "electron": "^26.2.4",
     "postcss": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "typescript": "latest",
+    "wait-on": "^7.0.1"
   }
 }
