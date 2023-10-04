@@ -1,7 +1,4 @@
-import { Content } from '@/core/components/Content'
-import Header from '@/core/components/Header'
-import Image from 'next/image'
-import { FormSignIn } from './components/SignIn'
+import { FormSignInGitHub } from './components/GitHubRepo/formSignIn'
 
 export default function Home() {
   return (
@@ -9,7 +6,7 @@ export default function Home() {
       <div className='w-1/2 h-screen hidden lg:block'>
         <div className='bg-hero-pattern object-cover w-full h-full'></div>
       </div>
-      <FormSignIn />
+      <FormSignInGitHub />
     </main>
   )
 }

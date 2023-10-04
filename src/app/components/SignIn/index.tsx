@@ -21,12 +21,13 @@ export const FormSignIn: React.FC = () => {
     console.log(`${email} - ${password}`);
 
     const response = await axios.get(`https://api.github.com/users/dedaldinodev4`);
+    console.log(response.data);
   }
 
   return (
     <>
       <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-        <h1 className="text-2xl font-semibold mb-4">Entrar</h1>
+        <h1 className="text-2xl font-semibold mb-4">GitHub Repos</h1>
         <form noValidate className='group' onSubmit={handleSubmit(onSubmit)}>
 
           <div className="mb-4">
